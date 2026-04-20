@@ -18,7 +18,7 @@ class Card:
 
 # ==================================================
 # DECK
-# ==================================================
+# ================================f==================
 
 class Deck:
     def __init__(self):
@@ -191,6 +191,12 @@ class PokerGUI:
     # ==================================================
 
     def reveal(self):
+
+        # 🛑 BLOCK if game hasn't started
+        if not self.player_hand or not self.computer_hand:
+            self.result_label.config(text="Press PLAY ROUND first!")
+            return
+
         self.computer_label.config(
             text="Computer: " + ", ".join([c.name() for c in self.computer_hand])
         )
@@ -285,4 +291,4 @@ If all equal → Tie.
 
 root = tk.Tk()
 app = PokerGUI(root)
-root.mainloop() 
+root.mainloop()
