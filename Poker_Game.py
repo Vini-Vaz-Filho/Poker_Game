@@ -75,7 +75,7 @@ class PokerGUI:
         self.root = root
         self.root.title("Poker Game")
 
-        # 🎨 BACKGROUND COLOR
+        #  BACKGROUND COLOR
         self.root.configure(bg="#1e1e2f")
 
         self.deck = None
@@ -192,7 +192,7 @@ class PokerGUI:
 
     def reveal(self):
 
-        # 🛑 BLOCK if game hasn't started
+        # BLOCK if game hasn't started
         if not self.player_hand or not self.computer_hand:
             self.result_label.config(text="Press PLAY ROUND first!")
             return
